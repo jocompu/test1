@@ -1,1 +1,296 @@
+//task one//
+
+// void main(){
+
+//   student one=student(name:"youssef", rollnumber: 11);
+//   print(one.rollnumber);
+// }
+
+// class student{
+//   String? name;
+//   int?rollnumber;
+//   student({this.name,this.rollnumber}); 
+// }
+
+//task two//
+
+// void main(){
+// mobilephone one=mobilephone(brandname: 'samsunge',model:'samsung a15' ,price: 1000);
+
+// one.displayDetails();
+
+// }
+
+// class mobilephone{
+
+// String? brandname;
+// dynamic? model;
+
+// int? price;
+
+// mobilephone({this.brandname ,this.model,  this.price});
+
+// void  displayDetails(){
+//   print("brandname is $brandname");
+//   print("mode is $model");
+//   print('price is  $price');
+// }
+
+// }
+
+// task3// 
+
+// void main(){
+//   employees one =employees(id: 20304080, name: 'youssef',designation: 'programmer');
+//   employees two = employees(id: 229393939, name: 'mohame', designation: 'designger ');
+
+//   print("employee one id : ${one.id}, "  'name: ${one.name}, designation ${one.designation} ' );
+//     print("employee one id : ${two.id}, " 'name: ${two.name} ,designation ${two.designation} ' );
+
+// }
+
+// class employees{
+//   dynamic id;
+//   String?name;
+//   String? designation;
+
+//   employees({this.id ,this.name,this.designation});
+// }
+
+// // task4//
+
+// void main(){
+//   laptop one =laptop(brandname: 'hp', price: 1000);
+//   print("laptop one barand name : ${one.brandname} , price: ${one.price}");
+// }
+
+// class laptop{
+//   String? brandname;
+//   int price =0;
+  
+//     laptop({this.brandname, this.price=0});
+//   }
+
+//task 5//
+
+
+
+// void main(){
+//   Map <String,dynamic>productMap ={
+//   'id': 1,
+//     'name': 'Laptop',
+//     'price': 1500.0
+//   };
+//   Product product=Product.fromMap(productMap);
+//  print("Product ID: ${product.id}");
+//   print("Product Name: ${product.name}");
+//   print("Product Price: ${product.price}");
+
+// }
+
+
+// class Product{
+// int? id;
+
+// String? name;
+// double?price;
+
+// Product({this.id, this.name, this.price});
+
+
+// Product.fromMap(Map<String,dynamic>map){
+//   id=map['id'];
+//   name=map['name'];
+//   price=map['price'];
+// }
+
+
+// }
+
+//task 6//
+
+// void main(){
+// rectangle one=rectangle(length: 100,width:100);
+// print( "area = ${one.calc()}");
+
+// }
+
+
+// class rectangle{
+
+//   double length;
+//   double width;
+
+//   rectangle({ required this .length,required this.width});
+
+//   double calc(){
+// double result  = length*width;
+//  return result;
+//   }
+
+// }
+
+//task 7//
+
+
+// void main(){
+
+//   Vechile carone=Vechile();
+//   Vechile cartwo=Vechile();
+//    Vechile carthere=Vechile();
+
+
+//    Vechile.countshow();
+
+// }
+
+// class Vechile{
+
+//   static int count=0;
+
+
+//   Vechile(){
+//     count++;
+//   }
+
+//   static void countshow(){
+//     print("the number of vechile create :  $count");
+//   }
+
+// }
+
+// task 8//
+
+// void main(){
+//   Circle circle1=Circle(redious:5.0);
+//   print("Circumference of the circle:${circle1.circumference()}");
+// }
+
+
+// class Circle{
+
+// double redious;
+
+// static const double pi=3.14159265359;
+
+// Circle({required this.redious});
+
+// double circumference(){
+//     return 2 * pi * redious;
+// }
+
+
+// }
+
+//task 9//
+
+
+// void main(){
+//   BurgerOrder orde=BurgerOrder()
+//   .addcheese();
+  
+//  orde =BurgerOrder().addlettuce();
+
+//  orde =BurgerOrder().addsauce();
+
+// orde .showoreder();
+// }
+
+
+// class  BurgerOrder{
+
+// bool hascheese=true;
+// bool haslettuce=true;
+// bool hassauce=true;
+
+//  addcheese(){
+//   hascheese=true;
+// return this;
+// }
+// addlettuce(){
+//   haslettuce=true;
+//   return this;
+// }
+// addsauce(){
+//   hassauce==true;
+//   return this ;
+// }
+
+// void showoreder(){
+//    print("Burger Order Details:");
+//        print("Cheese: ${hascheese? 'Yes' : 'No'}");
+//        print('lettuce: ${haslettuce? 'yes' : 'NO'}');
+//               print('sauce: ${hassauce? 'yes' : 'NO'}');
+
+
+// }
+
+
+// }
+
+// task 10 //
+
+
+
+// void main(){
+//   User adminuser= User.createUser('admin' , 'youssef');
+//   adminuser.showDetails();
+
+//   User regularUser=User.createUser("regular", 'mohamed');
+//  regularUser.showDetails();
+
+//   User unknow=User.createUser('unknown', 'ahmed');
+// unknow.showDetails();
+// }
+
+// abstract class User{
+// String? name;
+
+// User(this.name);
+
+// factory User.createUser(String  role, String name){
+
+
+//   if(role=='admin'){
+//  return AdminUser(name); }
+
+//  else if(role =='regular'){
+//   return RegularUser(name) ;
+//  }
+
+//  else {
+//       return UnknownUser(name);
+//     }
+//   }
+//     void showDetails();
+// }
+
+// class AdminUser extends User{
+//     AdminUser(String name) : super(name);
+// @override
+//  void showDetails(){
+//     print('User:$name(admin user)');
+//   }
+// }
+
+// class RegularUser extends User{
+//   RegularUser(String name): super(name);
+//   @override
+
+//   void showDetails(){
+//     print("user $name(Regular user)");
+//   }
+// }
+
+// class UnknownUser extends User{
+//   UnknownUser(String name): super(name);
+//   @override
+
+//   void showDetails(){
+//     print("Unknown $name(unknow user)");
+//   }
+// }
+
+
+
 
